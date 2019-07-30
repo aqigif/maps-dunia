@@ -68,7 +68,8 @@ class MyMap extends React.Component {
           initialRegion={this.state.region}
           showsUserLocation={true}
           showsMyLocationButton={true}
-          showsCompass={true}
+          rotateEnabled={false}
+          showsCompass={false}
           onPoiClick={(e)=>this.onPoiPress(e)}
           onLongPress={(e)=>this.onMapPress(e)}
         >
@@ -80,9 +81,9 @@ class MyMap extends React.Component {
             />):<View/>
             }
         </MapView>
-        {/* <View style={{width:'100%', paddingHorizontal:10, top:10, position:'absolute'}}>
-          <TextInput placeholder="Search your ex" style={{paddingLeft:20,backgroundColor:'white', borderRadius:5, width:'100%'}}/>
-        </View> */}
+        <View style={styles.searchWrapper}>
+          <TextInput placeholder="Search your future" style={styles.searchBar}/>
+        </View>
         <View style={styles.buttonContainer}>
           <View style={styles.bubble}>
           {this.state.marker!=null ? 
@@ -134,6 +135,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginVertical: 20,
     backgroundColor: 'transparent',
+  },
+  searchWrapper:{
+    width:'100%', 
+    paddingHorizontal:10, 
+    top:20, 
+    position:'absolute'
+  },
+  searchBar:{
+    paddingLeft:20,
+    backgroundColor:'white', 
+    borderRadius:5, 
+    width:'100%'
   }
 });
 
