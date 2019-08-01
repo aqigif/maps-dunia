@@ -16,14 +16,6 @@ export default class MyCalendar extends Component {
   render() {
     return (
       <View>
-        <Calendar
-          onDayPress={(day)=>this.onDayPress(day)}
-          style={styles.calendar}
-          hideExtraDays
-          markedDates={{[this.state.selected]: {
-              selected: true, 
-              disableTouchEvent: true}}}
-        />
         <CalendarList
         current={'2019-05-16'}
         pastScrollRange={24}
